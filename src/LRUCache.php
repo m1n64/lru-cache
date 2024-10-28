@@ -11,7 +11,7 @@ use Vasqo\LRU\Entities\CacheItem;
 class LRUCache implements SimpleCacheInterface
 {
     /**
-     * @var SplDoublyLinkedList
+     * @var SplDoublyLinkedList<int, CacheItem>
      */
     private SplDoublyLinkedList $cacheList;
 
