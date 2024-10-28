@@ -87,7 +87,8 @@ class LRUCache implements SimpleCacheInterface
     {
         foreach ($this->cacheList as $k => $v) {
             if ($v->getKey() === $key) {
-                $this->cacheList->offsetSet($k, new CacheItem($key, $value));
+                $this->cacheList->offsetUnset($k);
+                $this->cacheList->unshift(new CacheItem($key, $value));
                 return;
             }
         }

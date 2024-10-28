@@ -78,10 +78,10 @@ class LRUCacheTest extends TestCase
 
         $cache->put(2, 'TWO x2');
 
-        $this->assertSame([3 => 'THREE', 2 => 'TWO x2', 1 => 'ONE'], $cache->all());
+        $this->assertSame([2 => 'TWO x2', 3 => 'THREE', 1 => 'ONE'], $cache->all());
 
         $cache->put('four', 'FOUR');
-        $this->assertSame(['four' => 'FOUR', 3 => 'THREE', 2 => 'TWO x2'], $cache->all());
+        $this->assertSame(['four' => 'FOUR', 2 => 'TWO x2', 3 => 'THREE'], $cache->all());
 
         $nullElement = $cache->get(1);
         $this->assertNull($nullElement);
